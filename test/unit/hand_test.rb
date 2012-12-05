@@ -2,6 +2,7 @@ require 'test_helper'
 
 class HandTest < ActiveSupport::TestCase
   fixtures :hands
+  fixtures :nails
 
   test "hand should has at least one nail coloured" do
     hand = Hand.new
@@ -17,6 +18,6 @@ class HandTest < ActiveSupport::TestCase
     assert n3.save
     assert n4.save
     assert n5.save
-    assert !n6.save
+    assert !n6.save, "saved sixth nail"
   end
 end

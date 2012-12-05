@@ -1,8 +1,9 @@
 Nailmaker::Application.routes.draw do
-  resources :nails
 
   scope '(:locale)' do
-    resources :hands
+    resources :hands do
+      resources :nails
+    end
     root :to => 'welcome#index'
   end
 
