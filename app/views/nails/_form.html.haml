@@ -1,0 +1,10 @@
+= form_for @nail do |f|
+  - if @nail.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@nail.errors.count, "error")} prohibited this nail from being saved:"
+      %ul
+        - @nail.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
