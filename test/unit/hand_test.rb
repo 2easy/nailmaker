@@ -11,11 +11,12 @@ class HandTest < ActiveSupport::TestCase
   test "hand should have at most 5 nails" do
     hand = Hand.new
     n1,n2,n3,n4,n5,n6 = Nail.new,Nail.new,Nail.new,Nail.new,Nail.new,Nail.new
-    assert hand.add_nail(n1.id)
-    assert hand.add_nail(n2.id)
-    assert hand.add_nail(n3.id)
-    assert hand.add_nail(n4.id)
-    assert hand.add_nail(n5.id)
-    assert !hand.add_nail(n6.id)
+    n1.hand_id = n2.hand_id = n3.hand_id = n4.hand_id = n5.hand_id = n6.hand_id = hand.id
+    assert n1.save
+    assert n2.save
+    assert n3.save
+    assert n4.save
+    assert n5.save
+    assert !n6.save
   end
 end
