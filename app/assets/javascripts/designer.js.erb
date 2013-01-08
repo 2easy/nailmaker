@@ -1,0 +1,59 @@
+$(document).ready(function()
+{
+    //var active=[false,false,false,false,false];
+    var active;
+
+    /*
+    $('#colorpicker').mousemove(function(e)
+    {
+        if(!this.canvas)
+        {
+            this.canvas = $('<canvas/>').css({width: this.width + 'px', height: this.height + 'px'})[0];
+            this.canvas.getContext('2d').drawImage(this, 0, 0, this.width, this.height);
+        }
+        
+        var c = this.canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
+        var s = 'rgb('+c[0]+','+c[1]+','+c[2]+')';
+
+        $('#color').html(s);
+        $('#color').css('background-color', s);
+    });
+    
+    $('#colorpicker').mouseleave(function(e)
+    {
+        $('#color').html('');
+        $('#color').css('background-color', 'transparent');
+    });
+    
+    */
+    
+    $('.finger').click(function(e)
+    {
+        if(active) active.css('box-shadow', 'none');
+        active = $(this);
+        active.css('box-shadow', '0 0 20px #0000CC');
+    });
+    
+    $('#finger-view-button').click(function(e)
+    {
+        $('#finger-view').css('display', 'block');
+    });
+    
+    $('#hand-view-button').click(function(e)
+    {
+        $('#finger-view').css('display', 'none');
+    });
+    
+    $('.nail-color').click(function(e)
+    {
+        color = $(this).css('background-color');
+        active.find('.nail').css('background-color', color);
+    });
+    
+    $('.french-color').click(function(e)
+    {
+        color = $(this).css('background-color');
+        active.find('.french').css('background-color', color);
+    });
+
+ });

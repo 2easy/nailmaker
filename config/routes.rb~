@@ -3,8 +3,8 @@ Nailmaker::Application.routes.draw do
 
   scope '(:locale)' do
     resources :hands
-    match 'designer' => 'welcome#designer'
     root :to => 'welcome#index'
+    match 'designer' => 'welcome#designer'
   end
 
   # The priority is based upon order of creation:

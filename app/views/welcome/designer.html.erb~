@@ -1,0 +1,62 @@
+<div id="hand-view">
+  <div id="finger-view-button">▶</div>
+  
+  <h1>Nail Designer</h1>
+
+  <div style="display: none">
+  <%= image_tag "designer/colorpicker.png", :id => 'colorpicker', :width => 300, :height => 300 %>
+  <div id="color" style="width: 100px; height: 100px">
+  </div>
+  </div>
+
+  <div id="center">
+    <div id="hand">
+      <div id="finger1" class="finger">
+        <div class="nail"><%= image_tag "designer/pattern.jpg" %></div>
+        <div class="french"></div>
+      </div>
+      <div id="finger2" class="finger">
+        <div class="nail"></div>
+        <div class="french"></div>
+      </div>
+      <div id="finger3" class="finger">
+        <div class="nail"></div>
+        <div class="french"></div>
+      </div>
+      <div id="finger4" class="finger">
+        <div class="nail"></div>
+        <div class="french"></div>
+      </div>
+      <div id="finger5" class="finger">
+        <div class="nail"></div>
+        <div class="french"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="finger-view">
+  <div id="hand-view-button">◀</div>
+  
+  <h1>Kolor podkładu</h1>
+  <div id="nail-colors">
+    <div class="nail-color" style="background-color: red"></div>
+    <div class="nail-color" style="background-color: blue"></div>
+    <div class="nail-color" style="background-color: green"></div>
+    <div class="nail-color" style="background-color: violet"></div>
+    <div class="nail-color" style="background-color: orange"></div>
+    <div class="nail-color" style="background-color: black"></div>
+  </div>
+  
+  <h1>Kolor frenchu</h1>
+  <div id="french-colors">
+    <div class="french-color" style="background-color: red"></div>
+    <div class="french-color" style="background-color: blue"></div>
+    <div class="french-color" style="background-color: green"></div>
+    <div class="french-color" style="background-color: violet"></div>
+    <div class="french-color" style="background-color: orange"></div>
+    <div class="french-color" style="background-color: black"></div>
+  </div>
+  
+</div>
