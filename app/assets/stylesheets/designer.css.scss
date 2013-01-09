@@ -1,0 +1,195 @@
+@import url("http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans");
+
+*, body {
+	margin: 0px;
+	padding: 0px;
+  font-size: 11pt;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 100%;
+}
+
+h1 { font-size: 42pt; }
+h2 { font-size: 28pt; }
+
+#center {
+  margin: 0 auto;
+  width: 600px;
+  height: 100%;
+}
+
+#hand {
+	position:absolute;
+	width:600px;
+	height:800px;
+  bottom: 0px;
+	background-image: image-url("designer/hand.png");
+}
+
+#finger1, #finger2, #finger3, #finger4, #finger5 {
+  position: absolute;
+  overflow: hidden;
+}
+
+.nail, .french { width: inherit; height: inherit; position: absolute; };
+
+#finger1 {
+	left:15px;
+	top:304px;
+	width:45px;
+	height:87px;
+}
+
+#finger2 {
+	left:162px;
+	top:47px;
+	width:49px;
+	height:78px;
+}
+
+#finger3 {
+	left:296px;
+	top:13px;
+	width:51px;
+	height:78px;
+}
+
+#finger4 {
+	left:455px;
+	top:89px;
+	width:51px;
+	height:72px;
+}
+
+#finger5 {
+	left:541px;
+	top:267px;
+	width:49px;
+	height:53px;
+}
+
+#finger1 .nail {
+  -webkit-mask-image: image-url("designer/nail1.png");
+  -o-mask-image: image-url("designer/nail1.png");
+  -moz-mask-image: image-url("designer/nail1.png");
+  mask-image: image-url("designer/nail1.png");
+}
+
+#finger2 .nail {
+  -webkit-mask-image: image-url("designer/nail2.png");
+  -o-mask-image: image-url("designer/nail2.png");
+  -moz-mask-image: image-url("designer/nail2.png");
+  mask-image: image-url("designer/nail2.png");
+}
+
+#finger3 .nail {
+  -webkit-mask-image: image-url("designer/nail3.png");
+  -o-mask-image: image-url("designer/nail3.png");
+  -moz-mask-image: image-url("designer/nail3.png");
+  mask-image: image-url("designer/nail3.png");
+}
+
+#finger4 .nail {
+  -webkit-mask-image: image-url("designer/nail4.png");
+  -o-mask-image: image-url("designer/nail4.png");
+  -moz-mask-image: image-url("designer/nail4.png");
+  mask-image: image-url("designer/nail4.png");
+}
+
+#finger5 .nail {
+  -webkit-mask-image: image-url("designer/nail5.png");
+  -o-mask-image: image-url("designer/nail5.png");
+  -moz-mask-image: image-url("designer/nail5.png");
+  mask-image: image-url("designer/nail5.png");
+}
+
+#finger1 .french {
+  -webkit-mask-image: image-url("designer/french1.png");
+  -o-mask-image: image-url("designer/french1.png");
+  -moz-mask-image: image-url("designer/french1.png");
+  mask-image: image-url("designer/french1.png");
+}
+
+#finger2 .french {
+  -webkit-mask-image: image-url("designer/french2.png");
+  -o-mask-image: image-url("designer/french2.png");
+  -moz-mask-image: image-url("designer/french2.png");
+  mask-image: image-url("designer/french2.png");
+}
+
+#finger3 .french {
+  -webkit-mask-image: image-url("designer/french3.png");
+  -o-mask-image: image-url("designer/french3.png");
+  -moz-mask-image: image-url("designer/french3.png");
+  mask-image: image-url("designer/french3.png");
+}
+
+#finger4 .french {
+  -webkit-mask-image: image-url("designer/french4.png");
+  -o-mask-image: image-url("designer/french4.png");
+  -moz-mask-image: image-url("designer/french4.png");
+  mask-image: image-url("designer/french4.png");
+}
+
+#finger5 .french {
+  -webkit-mask-image: image-url("designer/french5.png");
+  -o-mask-image: image-url("designer/french5.png");
+  -moz-mask-image: image-url("designer/french5.png");
+  mask-image: image-url("designer/french5.png");
+}
+
+#hand-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	background-color: #EBEBD3;
+}
+
+#finger-view-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 20%;
+  width: 70px;
+  background-color: lightgrey;
+  font-size: 70pt;
+  padding: 20% 15px;
+}
+
+#finger-view {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	background-color: lightgrey;
+	padding: 10px 10px 10px 120px;
+}
+
+#hand-view-button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 20%;
+  width: 70px;
+  background-color: #EBEBD3;
+  font-size: 70pt;
+  padding: 20% 15px;
+}
+
+.nail-color, .french-color {
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+}

@@ -6,7 +6,12 @@ class HandTest < ActiveSupport::TestCase
 
   test "hand should has at least one nail coloured" do
     hand = Hand.new
-    assert !hand.save
+    assert !hand.save!
+    n1 = Nail.new
+    n1.hand_id = hand
+    n1.img = "foo.jpg"
+    n1.save
+    assert hand.valid?
   end
 
   test "hand should have at most 5 nails" do
