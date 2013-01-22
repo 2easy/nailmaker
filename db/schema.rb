@@ -33,4 +33,16 @@ ActiveRecord::Schema.define(:version => 20130122213214) do
     t.string   "img"
   end
 
+  create_table "patterns", :force => true do |t|
+    t.string   "name_pl"
+    t.string   "name_ang"
+    t.string   "image_url"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
 end

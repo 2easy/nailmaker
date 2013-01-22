@@ -1,6 +1,7 @@
 Nailmaker::Application.routes.draw do
 
   resources :colors
+  resources :patterns
 
   scope '(:locale)' do
     resources :hands do
