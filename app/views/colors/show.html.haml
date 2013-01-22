@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Polish name:
+  = @color.polish_name
+%p
+  %b English name:
+  = @color.english_name
+%p
+  %b Rgb color:
+  = @color.rgb_color
+
+= link_to 'Edit', edit_color_path(@color)
+\|
+= link_to 'Back', colors_path

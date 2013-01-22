@@ -1,0 +1,19 @@
+= form_for @color do |f|
+  - if @color.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@color.errors.count, "error")} prohibited this color from being saved:"
+      %ul
+        - @color.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :polish_name
+    = f.text_field :polish_name
+  .field
+    = f.label :english_name
+    = f.text_field :english_name
+  .field
+    = f.label :rgb_color
+    = f.text_field :rgb_color
+  .actions
+    = f.submit 'Save'

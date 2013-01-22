@@ -1,0 +1,23 @@
+%h1 Listing colors
+
+%table
+  %tr
+    %th Polish name
+    %th English name
+    %th Rgb color
+    %th
+    %th
+    %th
+
+  - @colors.each do |color|
+    %tr
+      %td= color.polish_name
+      %td= color.english_name
+      %td= color.rgb_color
+      %td= link_to 'Show', color
+      %td= link_to 'Edit', edit_color_path(color)
+      %td= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Color', new_color_path
