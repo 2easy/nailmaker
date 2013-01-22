@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name pl:
+  = @pattern.name_pl
+%p
+  %b Name ang:
+  = @pattern.name_ang
+%p
+  %b Image url:
+  = image_tag @pattern.image.url
+
+= link_to 'Edit', edit_pattern_path(@pattern)
+\|
+= link_to 'Back', patterns_path

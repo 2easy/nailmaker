@@ -1,0 +1,19 @@
+= form_for @pattern, :url => patterns_path, :html => { :multipart => true } do |f|
+  - if @pattern.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@pattern.errors.count, "error")} prohibited this pattern from being saved:"
+      %ul
+        - @pattern.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name_pl
+    = f.text_field :name_pl
+  .field
+    = f.label :name_ang
+    = f.text_field :name_ang
+  .field
+    = f.label :image
+    = f.file_field :image
+  .actions
+    = f.submit 'Save'

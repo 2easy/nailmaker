@@ -1,0 +1,23 @@
+%h1 Listing patterns
+
+%table
+  %tr
+    %th Name pl
+    %th Name ang
+    %th Image url
+    %th
+    %th
+    %th
+
+  - @patterns.each do |pattern|
+    %tr
+      %td= pattern.name_pl
+      %td= pattern.name_ang
+      %td= image_tag(pattern.image.url, :alt => "not found")
+      %td= link_to 'Show', pattern
+      %td= link_to 'Edit', edit_pattern_path(pattern)
+      %td= link_to 'Destroy', pattern, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Pattern', new_pattern_path
