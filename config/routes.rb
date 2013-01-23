@@ -1,5 +1,7 @@
 Nailmaker::Application.routes.draw do
 
+  resources :styles
+
   resources :colors
   resources :patterns
 
