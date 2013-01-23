@@ -13,7 +13,8 @@
     %tr
       %td= color.polish_name
       %td= color.english_name
-      %td= color.rgb_color
+      %td
+        %div{:style=> "width: 100px; height: 25px; border: 1px solid black; background-color: #{color.rgb_color}"}
       %td= link_to 'Show', color
       %td= link_to 'Edit', edit_color_path(color)
       %td= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' }

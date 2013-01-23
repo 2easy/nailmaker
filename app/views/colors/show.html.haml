@@ -8,7 +8,7 @@
   = @color.english_name
 %p
   %b Rgb color:
-  = @color.rgb_color
+  %div{:style=> "width: 100px; height: 25px; border: 1px solid black; background-color: #{@color.rgb_color}"}
 
 = link_to 'Edit', edit_color_path(@color)
 \|

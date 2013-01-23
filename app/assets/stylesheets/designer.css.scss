@@ -1,5 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans");
-
 *, body {
 	margin: 0px;
 	padding: 0px;
@@ -7,12 +5,12 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: sans-serif;
   line-height: 100%;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: sans-serif;
   line-height: 100%;
 }
 
@@ -25,20 +23,47 @@ h2 { font-size: 28pt; }
   height: 100%;
 }
 
+/* paznokcie */
+
+#hand-view {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
 #hand {
 	position:absolute;
 	width:600px;
 	height:800px;
-  bottom: 0px;
+  top: 5px;
 	background-image: image-url("designer/hand.png");
 }
 
 #finger1, #finger2, #finger3, #finger4, #finger5 {
   position: absolute;
-  overflow: hidden;
 }
 
-.nail, .french { width: inherit; height: inherit; position: absolute; };
+.nail, .french {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  overflow: hidden;
+};
+
+.marker {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  box-shadow: 0 0 20px #59F0DC;
+  opacity: 0;
+}
+
+#finger1 .marker { top: -10px; left: -29px; }
+#finger2 .marker { top: -11px; left: -25px; }
+#finger3 .marker { top: -8px; left: -22px; }
+#finger4 .marker { top: -12px; left: -20px; }
+#finger5 .marker { top: -21px; left: -25px; }
 
 #finger1 {
 	left:15px;
@@ -145,51 +170,66 @@ h2 { font-size: 28pt; }
   mask-image: image-url("designer/french5.png");
 }
 
-#hand-view {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-	background-color: #EBEBD3;
+/* menu */
+
+#menu {
+  positon: fixed; left: 0px; top: 0px;
 }
 
-#finger-view-button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  height: 20%;
-  width: 70px;
-  background-color: lightgrey;
-  font-size: 70pt;
-  padding: 20% 15px;
+#menu .button {
+  cursor: pointer;
+  background-color: black;
+  color: #BBB;
+  height: 20px;
+  width: 80px;
+  margin: 5px;
+  border-radius: 100%;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+  padding: 30px 0;
 }
+  
 
-#finger-view {
+.submenu {
   display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+  opacity: 0.0;
   width: 100%;
-  height: 100%;
-	background-color: lightgrey;
-	padding: 10px 10px 10px 120px;
+  height: 100px;
+  background: black;
+  position: fixed;
+  bottom: 0px;
 }
 
-#hand-view-button {
+.submenu .title {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 20%;
-  width: 70px;
-  background-color: #EBEBD3;
-  font-size: 70pt;
-  padding: 20% 15px;
+  font-size: 40px;
+  top: -33px;
+  font-weight: bold;
+  color: black;
+  left: 5px;
 }
 
-.nail-color, .french-color {
+.submenu .nail, .submenu .french, .submenu .pattern {
+  cursor: pointer;
+  box-shadow: 0 0 3px white;
+  text-shadow: 0px 0px 4px black;
   display: inline-block;
-  height: 120px;
-  width: 120px;
+  position: relative;
+  height: 20px;
+  width: 80px;
   margin: 10px;
+  border-radius: 100%;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 9pt;
+  color: white;
+  padding: 30px 0;
+}
+
+.submenu .nail:hover, .submenu .french:hover, .submenu .pattern:hover {
+  box-shadow: 0 0 8px #59F0DC;
 }

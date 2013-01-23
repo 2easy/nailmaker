@@ -1,7 +1,7 @@
 <div id="hand-view">
   <div id="finger-view-button">▶</div>
   
-  <h1>Nail Designer</h1>
+  <div style="positon: fixed; bottom: 10px; left: 10px;"><h1>Nail<br/>Designer</h1></div>
 
   <div style="display: none">
   <%= image_tag "designer/colorpicker.png", :id => 'colorpicker', :width => 300, :height => 300 %>
@@ -12,22 +12,28 @@
   <div id="center">
     <div id="hand">
       <div id="finger1" class="finger">
+        <div class="marker"></div>
         <div class="nail"><%= image_tag "designer/pattern.jpg" %></div>
         <div class="french"></div>
+        
       </div>
       <div id="finger2" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
       <div id="finger3" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
       <div id="finger4" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
       <div id="finger5" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>

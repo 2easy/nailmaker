@@ -1,4 +1,8 @@
 %center
-  %h1 Witamy w paznokciorobiarce!
-  = link_to "english", new_hand_path(:locale => "en")
-  = link_to "polish", new_hand_path(:locale => "pl")
+
+  %div{:style=> "margin: 100px 25px; display: inline-block;"}
+    %h2 English
+    = link_to image_tag("flag_en.png"), designer_path(:locale => "en"), :confirm => "Please insert your hand."
+  %div{:style=> "margin: 100px 25px; display: inline-block;"}
+    %h2 Polski
+    = link_to image_tag("flag_pl.png"), designer_path(:locale => "pl"), :confirm => "Proszę włożyć rękę."

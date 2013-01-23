@@ -1,62 +1,108 @@
 <div id="hand-view">
-  <div id="finger-view-button">▶</div>
-  
-  <h1>Nail Designer</h1>
-
-  <div style="display: none">
-  <%= image_tag "designer/colorpicker.png", :id => 'colorpicker', :width => 300, :height => 300 %>
-  <div id="color" style="width: 100px; height: 100px">
-  </div>
-  </div>
 
   <div id="center">
     <div id="hand">
       <div id="finger1" class="finger">
-        <div class="nail"><%= image_tag "designer/pattern.jpg" %></div>
+        <div class="marker"></div>
+        <div class="nail"></div>
         <div class="french"></div>
+        
       </div>
       <div id="finger2" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
       <div id="finger3" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
       <div id="finger4" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
       <div id="finger5" class="finger">
+        <div class="marker"></div>
         <div class="nail"></div>
         <div class="french"></div>
       </div>
     </div>
   </div>
+  
+<div id="menu">
+    <div id="nails" class="button"><%= t(:nail_text) %></div>
+    <div id="frenchs" class="button"><%= t(:french_text) %></div>
+    <div id="patterns" class="button"><%= t(:pattern_text) %></div>
+</div>
+  
+<div id="nails" class="submenu">
+  <div class="title"><%= t(:nail_text) %></div>
+  <div class="nail" style="background-color: none"><%= t(:none_text) %></div>
+  
+  <% @colors.each do |color| %>
+  <div class="nail" style="background-color: <%= color.rgb_color %>">
+    <% if params[:locale] == 'pl' %>
+      <%= color.polish_name %>
+    <% else %>
+      <%= color.english_name %>
+    <% end %>
+  </div>
+  <% end %>
+  
+</div>
+  
+<div id="frenchs" class="submenu">
+  <div class="title"><%= t(:french_text) %></div>
+  <div class="french" style="background-color: none"><%= t(:none_text) %></div>
+  
+  <% @colors.each do |color| %>
+  <div class="french" style="background-color: <%= color.rgb_color %>">
+    <% if params[:locale] == 'pl' %>
+      <%= color.polish_name %>
+    <% else %>
+      <%= color.english_name %>
+    <% end %>
+  </div>
+  <% end %>
+  
+</div>
+
+<div id="patterns" class="submenu">
+  <div class="title"><%= t(:pattern_text) %></div>
+  <div class="pattern" style="background-image: none"><%= t(:none_text) %></div>
+  
+  <% @patterns.each do |pattern| %>
+  <div class="pattern" style="background-image: url(<%= pattern.image.url %>)">
+    <% if params[:locale] == 'pl' %>
+      <%= pattern.name_pl %>
+    <% else %>
+      <%= pattern.name_ang %>
+    <% end %>
+  </div>
+  <% end %>
+  
+</div>
 
 </div>
 
-<div id="finger-view">
-  <div id="hand-view-button">◀</div>
-  
-  <h1>Kolor podkładu</h1>
-  <div id="nail-colors">
-    <div class="nail-color" style="background-color: red"></div>
-    <div class="nail-color" style="background-color: blue"></div>
-    <div class="nail-color" style="background-color: green"></div>
-    <div class="nail-color" style="background-color: violet"></div>
-    <div class="nail-color" style="background-color: orange"></div>
-    <div class="nail-color" style="background-color: black"></div>
-  </div>
-  
-  <h1>Kolor frenchu</h1>
-  <div id="french-colors">
-    <div class="french-color" style="background-color: red"></div>
-    <div class="french-color" style="background-color: blue"></div>
-    <div class="french-color" style="background-color: green"></div>
-    <div class="french-color" style="background-color: violet"></div>
-    <div class="french-color" style="background-color: orange"></div>
-    <div class="french-color" style="background-color: black"></div>
-  </div>
-  
+<div style="display: none">
+<%= form_for(@design, :url => print_path(@design)) do |f| %>
+  <%= f.text_field :nail1 %>
+  <%= f.text_field :nail2 %>
+  <%= f.text_field :nail3 %>
+  <%= f.text_field :nail4 %>
+  <%= f.text_field :nail5 %>
+  <%= f.text_field :french1 %>
+  <%= f.text_field :french2 %>
+  <%= f.text_field :french3 %>
+  <%= f.text_field :french4 %>
+  <%= f.text_field :french5 %>
+  <%= f.text_field :pattern1 %>
+  <%= f.text_field :pattern2 %>
+  <%= f.text_field :pattern3 %>
+  <%= f.text_field :pattern4 %>
+  <%= f.text_field :pattern5 %>
+<% end %>
 </div>

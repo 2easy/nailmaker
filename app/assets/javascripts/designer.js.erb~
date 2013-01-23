@@ -1,7 +1,6 @@
 $(document).ready(function()
 {
-    //var active=[false,false,false,false,false];
-    var active;
+    var active=[false,false,false,false,false];
 
     /*
     $('#colorpicker').mousemove(function(e)
@@ -27,11 +26,12 @@ $(document).ready(function()
     
     */
     
+    $('.finger').css( 'cursor', 'pointer' );
     $('.finger').click(function(e)
     {
-        if(active) active.css('box-shadow', 'none');
+        if(active) active.find('.marker').animate({opacity: 0.0}, 700);
         active = $(this);
-        active.css('box-shadow', '0 0 20px #0000CC');
+        active.find('.marker').animate({opacity: 1.0}, 700);
     });
     
     $('#finger-view-button').click(function(e)
@@ -47,14 +47,12 @@ $(document).ready(function()
     $('.nail-color').click(function(e)
     {
         color = $(this).css('background-color');
-        console.log(color);
         active.find('.nail').css('background-color', color);
     });
     
     $('.french-color').click(function(e)
     {
         color = $(this).css('background-color');
-        console.log(color);
         active.find('.french').css('background-color', color);
     });
 

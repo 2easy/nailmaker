@@ -8,6 +8,7 @@ Nailmaker::Application.routes.draw do
       resources :nails
     end
     match 'designer' => 'welcome#designer'
+    match 'print' => 'welcome#print'
     root :to => 'welcome#index'
   end
 

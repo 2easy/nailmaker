@@ -1,59 +1,93 @@
 $(document).ready(function()
 {
-    //var active=[false,false,false,false,false];
-    var active;
-
-    /*
-    $('#colorpicker').mousemove(function(e)
-    {
-        if(!this.canvas)
-        {
-            this.canvas = $('<canvas/>').css({width: this.width + 'px', height: this.height + 'px'})[0];
-            this.canvas.getContext('2d').drawImage(this, 0, 0, this.width, this.height);
-        }
-        
-        var c = this.canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
-        var s = 'rgb('+c[0]+','+c[1]+','+c[2]+')';
-
-        $('#color').html(s);
-        $('#color').css('background-color', s);
-    });
+    // WYBÓR PAZNOKCIA
     
-    $('#colorpicker').mouseleave(function(e)
-    {
-        $('#color').html('');
-        $('#color').css('background-color', 'transparent');
-    });
+    var active = null;
     
-    */
-    
+    $('.finger').css( 'cursor', 'pointer' );
     $('.finger').click(function(e)
     {
-        if(active) active.css('box-shadow', 'none');
+      if(active)
+      {
+        if(active.attr("id") == $(this).attr("id"))
+        {
+          active.find('.marker').animate({opacity: 0.0}, 700);
+          active = null;
+        }
+        else
+        {
+          active.find('.marker').animate({opacity: 0.0}, 700);
+          active = $(this);
+          active.find('.marker').animate({opacity: 1.0}, 700);
+        }
+      }
+      else
+      {
         active = $(this);
-        active.css('box-shadow', '0 0 20px #0000CC');
+        active.find('.marker').animate({opacity: 1.0}, 700);
+      }
     });
     
-    $('#finger-view-button').click(function(e)
+    // MENU
+    
+    var submenu = null;
+    
+    $('#menu .button').click(function(e)
     {
-        $('#finger-view').css('display', 'block');
+      var buttonid = $(this).attr("id");
+      
+      if(submenu)
+      {
+        if(submenu.attr("id") == buttonid)
+        {
+          submenu.css('opacity', '0.0');
+          submenu.css('display', 'none');
+          submenu = null;
+        }
+        else
+        {
+          submenu.css('opacity', '0.0');
+          submenu.css('display', 'none');
+          submenu = $("#"+buttonid+".submenu");
+          submenu.css('display', 'block');
+          submenu.animate({opacity: 1.0}, 700);
+        }
+      }
+      else
+      {
+        submenu = $("#"+buttonid+".submenu");
+        submenu.css('display', 'block');
+        submenu.animate({opacity: 1.0}, 700);
+      }
     });
     
-    $('#hand-view-button').click(function(e)
+    // SUBMENU
+    
+    $('.submenu .nail').click(function(e)
     {
-        $('#finger-view').css('display', 'none');
+        if(active)
+        {
+          color = $(this).css('background-color');
+          active.find('.nail').css('background-color', color);
+        }
     });
     
-    $('.nail-color').click(function(e)
+    $('.submenu .french').click(function(e)
     {
-        color = $(this).css('background-color');
-        active.find('.nail').css('background-color', color);
+        if(active)
+        {
+          color = $(this).css('background-color');
+          active.find('.french').css('background-color', color);
+        }
     });
     
-    $('.french-color').click(function(e)
+    $('.submenu .pattern').click(function(e)
     {
-        color = $(this).css('background-color');
-        active.find('.french').css('background-color', color);
+        if(active)
+        {
+          image = $(this).css('background-image');
+          active.find('.nail').css('background-image', image);
+        }
     });
 
  });
